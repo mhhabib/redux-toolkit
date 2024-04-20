@@ -10,17 +10,12 @@ const profileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
-    setName: (state, action) => {
-      state.name = action.payload;
-    },
-    setGender: (state, action) => {
-      state.gender = action.payload;
-    },
-    setDepartment: (state, action) => {
-      state.department = action.payload;
+    updateProfile: (state, action) => {
+      const { field, value } = action.payload;
+      state[field] = value;
     }
   },
 });
 
 export default profileSlice.reducer;
-export const { setName, setGender, setDepartment } = profileSlice.actions;
+export const { updateProfile } = profileSlice.actions;

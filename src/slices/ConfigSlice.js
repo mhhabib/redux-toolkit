@@ -9,14 +9,12 @@ const configSlice = createSlice({
   name: 'config',
   initialState,
   reducers: {
-    setEducation: (state, action) => {
-      state.education = action.payload;
-    },
-    setExperience: (state, action) => {
-      state.experience = action.payload;
-    },
+    updateConfig: (state, action) => {
+      const { field, value } = action.payload;
+      state[field] = value;
+    }
   },
 });
 
 export default configSlice.reducer;
-export const { setEducation, setExperience } = configSlice.actions;
+export const { updateConfig } = configSlice.actions;
